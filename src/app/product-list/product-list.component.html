@@ -1,0 +1,72 @@
+<h2 class="container">Products</h2>
+
+<div class="container">
+    <div class="col mt-1">
+        <div class="row row-lg-3">
+            <div class="card mt-3" style="width: 20rem;" *ngFor="let product of product">
+                <div class="card-body">
+                    <h3>
+                        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+                            {{ product.name }}
+                        </a>
+                    </h3>
+
+                    <p *ngIf="product.description">
+                        Description:{{product.description}}
+                    </p>
+                    <button (click)="share()">
+                        Share
+                    </button>
+                    <br>
+
+                    <app-product-alerts [product]="product" (notify)="onNotify()">
+                    </app-product-alerts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div *ngFor="let product of product">
+    <h3>
+        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+            {{ product.name }}
+        </a>
+    </h3>
+
+    <p *ngIf="product.description">
+        Description:{{product.description}}
+    </p>
+
+    <button (click)="share()">
+        Share
+    </button>
+
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+    </app-product-alerts>
+
+</div> -->
+<!-- <div class="container">
+    <div class="row row-lg-3">
+        <div class="col">
+            <div class="col" *ngFor="let product of product">
+                <div class="col">
+                    <h3>
+                        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+                            {{ product.name }}
+                        </a>
+                    </h3>
+                    <p *ngIf="product.description">
+                        Description:{{product.description}}
+                    </p>
+                    <button (click)="share()">
+                        Share
+                    </button>
+
+                    <app-product-alerts [product]="product" (notify)="onNotify()">
+                    </app-product-alerts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
