@@ -1,11 +1,19 @@
 <h3>Cart</h3>
 
 <p>
-    <a routerLink="/shipping"> Shipping Prices </a>
+    <a [routerLink]="['/shipping/:shppingId']">
+        <h4>Shiping Cost</h4>
+    </a>
 </p>
 
 <div class="cart-item" *ngFor="let item of items">
     <span>{{ item.name}}</span>
+    <span>{{ item.price | currency}}</span>
+</div>
+
+
+<div class="cart-item" *ngFor="let item of item">
+    <span>{{ item.type}}</span>
     <span>{{ item.price | currency}}</span>
 </div>
 
@@ -23,8 +31,8 @@
                 <input id="address" type="text" formControlName="address" placeholder="Address">
             </label>
         </div>
-
+        //ponerle funcion para que envie el correo
         <button class="button" type="submit">Purchese</button>
-
+        <button class="button" type="submit" [routerLink]="['/']">atras</button>
     </form>
 </div>

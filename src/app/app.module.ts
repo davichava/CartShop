@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Import angular material
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { ShippingComponent } from './shipping/shipping.component';
     AppComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    // MatCardModule
+    
   ],
   imports: [
     BrowserModule,
@@ -30,8 +36,9 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent},
-      { path: 'shipping', component:ShippingComponent},
-    ])
+      { path: 'shipping/:shppingId', component: ShippingComponent},
+    ]),
+    BrowserAnimationsModule
   ],
   
   bootstrap: [AppComponent]

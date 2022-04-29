@@ -9,7 +9,11 @@ import { FormBuilder } from '@angular/forms';
 })
 export class CartComponent implements OnInit {
 
+  //para almacenar los productos al carrito
   items = this.cartService.getItems();
+
+  //para almacenar el precio del envio al carro
+  item = this.cartService.getItem();
 
   checkoutForm = this.formBuilder.group({
     name: '',
@@ -17,8 +21,7 @@ export class CartComponent implements OnInit {
   });
   
   
-  constructor(private cartService: CartService,
-              private formBuilder: FormBuilder) { }
+  constructor(private cartService: CartService, private formBuilder: FormBuilder) { }
 
   onSubmit(): void{
     //Procesar datos de pago aquí

@@ -1,10 +1,10 @@
 export interface Shipping {
-    id: number,
-    type: string,
+    id: number;
+    type: string;
     price: number;
 }
 
-export const shipping = [
+export const shippings = [
     {
         id: 1,
         type: "Overnight",
@@ -17,7 +17,7 @@ export const shipping = [
     },
     {
         id: 3,
-        typr: "Postal",
+        type: "Postal",
         price: 2.99
     }
-]
+];
